@@ -18,7 +18,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     hot: true,
     contentBase: false,
     compress: true,
-    host: process.env.HOST || 'localhost',
+    host: process.env.HOST || '0.0.0.0',
     port: +process.env.PORT || 8080,
     open: true, // 自动打开浏览器
     overlay: { warnings: false, errors: true }, // 展示全屏报错
@@ -88,9 +88,7 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(
         new FriendlyErrorsPlugin({
           compilationSuccessInfo: {
-            messages: [
-              `Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`
-            ]
+            messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
           },
           onErrors: undefined
         })

@@ -9,9 +9,12 @@ Vue.config.productionTip = false;
 
 sync(store, router);
 
-new Vue({
+/* eslint-disable */
+const Vm = new Vue({
   el: '#app',
   router,
   store,
   render: h => h(App)
 });
+
+export default Vm;

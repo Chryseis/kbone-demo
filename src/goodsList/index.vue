@@ -18,12 +18,12 @@
       </div>
     </div>
     <div class="activity-wrapper">
-      <div class="left"><img :src="activeList[0].bgImageUrl" alt="" /></div>
+      <div class="left" @click="goDetail"><img :src="activeList[0].bgImageUrl" alt="" /></div>
       <div class="right">
-        <div class="top">
+        <div class="top" @click="goActivity(activeList[1].linkUrl)">
           <img :src="activeList[1].bgImageUrl" alt="" />
         </div>
-        <div class="bottom">
+        <div class="bottom" @click="goActivity(activeList[2].linkUrl)">
           <img :src="activeList[2].bgImageUrl" alt="" />
         </div>
       </div>
@@ -34,6 +34,7 @@
 <script>
 import Vue from 'vue';
 import { KSwiper, KSwiperItem, KView } from 'kbone-ui';
+import router from '@/utils/router';
 
 Vue.use(KSwiper);
 Vue.use(KSwiperItem);
@@ -96,8 +97,7 @@ export default {
       activeList: [
         {
           imageUrl: null,
-          bgImageUrl:
-            'https://static-image.91jkys.com/index/6e1e26e4-3881-45dd-bb73-0d2a65fa6edd.gif',
+          bgImageUrl: 'https://static-image.91jkys.com/index/6e1e26e4-3881-45dd-bb73-0d2a65fa6edd.gif',
           linkUrl: '',
           type: '2',
           targetId: '3079',
@@ -107,8 +107,7 @@ export default {
         },
         {
           imageUrl: null,
-          bgImageUrl:
-            'https://static-image.91jkys.com/index/42236ac2-5adc-4866-be45-0b71347bba7f.jpg',
+          bgImageUrl: 'https://static-image.91jkys.com/index/42236ac2-5adc-4866-be45-0b71347bba7f.jpg',
           linkUrl: 'https://static.91jkys.com/tms/tbxin/index.html',
           type: '3',
           targetId: '',
@@ -118,8 +117,7 @@ export default {
         },
         {
           imageUrl: null,
-          bgImageUrl:
-            'https://static-image.91jkys.com/index/c7941d81-1a04-4881-89e6-3f2333cbf743.jpg',
+          bgImageUrl: 'https://static-image.91jkys.com/index/c7941d81-1a04-4881-89e6-3f2333cbf743.jpg',
           linkUrl: 'http://static.91jkys.com/collection/toubao/dist/index.html#/entrance',
           type: '3',
           targetId: '',
@@ -129,6 +127,14 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    goActivity(url) {
+      router.push(`/h5/${encodeURIComponent(url)}`);
+    },
+    goDetail() {
+      router.push('/goodsDetail');
+    }
   }
 };
 </script>

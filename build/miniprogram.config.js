@@ -9,7 +9,8 @@ module.exports = {
     other: ['/list/:id'],
     home: ['/home'],
     goodsDetail: ['/goodsDetail'],
-    goods: ['/goods']
+    goods: ['/goods'],
+    h5: ['/h5/:src']
   },
   redirect: {
     notFound: 'home',
@@ -21,7 +22,7 @@ module.exports = {
   app: {
     backgroundTextStyle: 'dark',
     navigationBarTextStyle: 'white',
-    navigationBarTitleText: 'kbone'
+    navigationBarTitleText: '智云健康'
   },
   appExtraConfig: {
     sitemapLocation: 'sitemap.json'
