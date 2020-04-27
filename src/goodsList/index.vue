@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <search-bar></search-bar>
     <KSwiper
       class="swiper"
       :indicator-dots="indicatorDots"
@@ -35,6 +36,7 @@
 import Vue from 'vue';
 import { KSwiper, KSwiperItem, KView } from 'kbone-ui';
 import router from '@/utils/router';
+import SearchBar from '@/common/SearchBar';
 
 Vue.use(KSwiper);
 Vue.use(KSwiperItem);
@@ -135,6 +137,9 @@ export default {
     goDetail() {
       router.push('/goodsDetail');
     }
+  },
+  components: {
+    SearchBar
   }
 };
 </script>

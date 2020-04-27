@@ -19,8 +19,8 @@ module.exports = {
   entry: {
     // js 入口
     goods: path.resolve(__dirname, '../src/mp/goods/main.mp.js'),
-    goodsDetail: path.resolve(__dirname, '../src/mp/goodsDetail/main.mp.js'),
     home: path.resolve(__dirname, '../src/mp/home/main.mp.js'),
+    goodsDetail: path.resolve(__dirname, '../src/mp/goodsDetail/main.mp.js'),
     other: path.resolve(__dirname, '../src/mp/other/main.mp.js'),
     h5: path.resolve(__dirname, '../src/mp/h5/main.mp.js')
   },
